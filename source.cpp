@@ -98,13 +98,13 @@ namespace my_tree {
             return curr;
         }
         if (val == curr->data) {
-            //Случай: нет детей
+            //нет детей
             if (curr->right == nullptr && curr->left == nullptr) {
                 delete curr;
                 curr = nullptr;
                 return curr;
             }
-            //Случай: один ребенок
+            //один ребенок
             if (curr->left == nullptr || curr->right == nullptr) {
                 if (curr->left == nullptr) {
                     Node* temp = curr->right;
@@ -119,7 +119,7 @@ namespace my_tree {
                     return curr;
                 }
             }
-            //Случай: два ребенка
+            //два ребенка
             Node* minim = min(curr->right);
             curr->data = minim->data;
             curr->right = remove_node(curr->right, minim->data);
